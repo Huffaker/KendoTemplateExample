@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.2.805/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.2.805/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.2.805/styles/kendo.mobile.all.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+    <script>
+        //get libs and deps via require.js
+        require.config({
+            baseUrl: "",
+            paths: {
+                'jquery': 'http://cdn.kendostatic.com/2015.2.805/js/jquery.min',
+                'kendo': 'http://cdn.kendostatic.com/2015.2.805/js',
+                'mokuso': 'Scripts/mokuso.min',
+                'viewmodel': 'ViewModels',
+                'view': 'Views'
+            },
+            shim: {
+                'jquery': { exports: 'jQuery' },
+                'kendo/kendo.core.min': { deps: ['jquery'] },
+                'mokuso': { deps: ['jquery','kendo/kendo.router.min', 'kendo/kendo.view.min'], exports: 'mokuso' },
+            },
+            deps: ['mokuso'],
+            callback: function (mokuso) {
+                //initialize mokuso
+                var libs = ["menu","window"]
+                require($.map(libs,function (lib) { return "kendo/kendo."+lib+".min" }), function () {
+                    window.app = new mokuso($("#content"), { initial: "Home", modules: [
+                        new (mokuso.Module.extend({ 
+                            beforeInit: function (app) {
+                                return app.load($("#nav"),"Navigation"); 
+                            }
+                        }))()
+                    ]});
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="content"></div>
+</body>
+</html>
