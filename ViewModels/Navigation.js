@@ -19,6 +19,9 @@
 
         go_Temp1: function (e) {
             window.app.navigate("Template1");
+        },
+        go_Temp2: function (e) {
+        	window.app.navigate("Template2");
         }
     };
 });

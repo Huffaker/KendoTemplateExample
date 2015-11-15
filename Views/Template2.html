@@ -1,0 +1,26 @@
+﻿<h2 style="display: block; margin-top:10px;">Template Example 2</h2>
+<div id="dataInput">
+	<input class="k-textbox" type="text" id="someText" style="margin-top: 20px;" />
+	<input id="someDropDownValue"
+		   data-role="dropdownlist"
+		   data-text-field="Text"
+		   data-value-field="Value"
+		   data-bind="value: dropDownValue, source: dropValues" />
+</div>
+<div class="k-button" data-bind="click: buildTemplate" style="margin-top: 20px;">Test Template</div>
+
+<div id="simpleTemplateContent" style="margin-top: 20px;"></div>
+
+
+<script id="templateTest" type="text/x-kendo-template">
+	<div>
+		<span style="margin-right:10px;">#=someText#</span>
+		<span style="margin-right:10px;">#=dropDownValue#</span>
+	</div>
+</script>
+
+<style>
+	#simpleTemplateContent:nth-child(2) {
+		background: #aaa;
+	}
+</style>
