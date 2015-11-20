@@ -23,7 +23,7 @@
 		arrayDropValues: [
 			{ Text: '10', Value: 10 },
 			{ Text: '20', Value: 20 },
-			{ Text: '30', Value: 50 },
+			{ Text: '50', Value: 50 },
 		],
 		dropDownValue: '1',
 		textField: '',
