@@ -1,25 +1,33 @@
 ﻿<h2 style="display: block; margin-top: 10px;">Template Example 2</h2>
 
-<input class="k-textbox" type="text" id="someText" style="margin-top: 20px;" data-bind="value: textField"/>
-<input id="someDropDownValue"
-		data-role="dropdownlist"
-		data-text-field="Text"
-		data-value-field="Value"
-		data-bind="value: dropDownValue, source: dropValues" />
+
+<input class="k-textbox" type="text" id="someText" style="margin-top: 20px;" data-bind="value: textField" />
+<div>
+	<input id="someDropDownValue"
+		   data-role="dropdownlist"
+		   data-text-field="Text"
+		   data-value-field="Value"
+		   data-bind="value: dropDownValue, source: dropValues" />
+</div>
 <div class="k-button" data-bind="click: buildTemplate" style="margin-top: 20px;">Test Template</div>
 
-<div id="simpleTemplateContent" style="margin-top: 20px;" data-bind="source: tableData" data-template="templateTest"></div>
-
+<table style="margin-top: 30px">
+	<tr>
+		<th style="width: 300px;">Some Text</th>
+		<th style="width: 300px;">Drop Down Value</th>
+	</tr>
+	<tbody id="simpleTemplateContent" style="margin-top: 20px;" data-bind="source: tableData" data-template="templateTest"></tbody>
+</table>
 
 <script id="templateTest" type="text/x-kendo-template">
-	<div>
-		<span style="margin-right:10px;">#=someText#</span>
-		<span style="margin-right:10px;">#=dropDownValue#</span>
-	</div>
+	<tr>
+		<td>#=someText#</td>
+		<td>#=dropDownValue#</td>
+	</tr>
 </script>
 
 <style>
-	#simpleTemplateContent div:nth-child(2) {
-		background: #aaa;
+	#simpleTemplateContent tr:nth-child(odd) {
+		background: #eee;
 	}
 </style>

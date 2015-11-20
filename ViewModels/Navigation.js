@@ -22,6 +22,9 @@
         },
         go_Temp2: function (e) {
         	window.app.navigate("Template2");
-        }
+        },
+    	go_Temp3: function (e) {
+    		window.app.navigate("Template3");
+		}
     };
 });
