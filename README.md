@@ -1,7 +1,7 @@
 # Kendo Template Example
 Example of KendoUI Templates and Data Binding
 
-Check out the blog post located at [jameshuffaker.com](http://jameshuffaker.com)
+Check out the blog post located at [jameshuffaker.com](http://jameshuffaker.com/blog/2015/11/23/KendoUI-Templates-Data-Binding-Copy.html)
 
 This project contains three examples:
 
